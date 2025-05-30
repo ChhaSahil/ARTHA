@@ -4,7 +4,7 @@ st.title("💬 Personal Finance Assistant - ARTHA")
 from ARTHA.agent import callArtha
 from datetime import datetime, timedelta, timezone
 from pymongo import MongoClient
-from ARTHA.chat_logger import log_chat
+from chat_logger import log_chat
 
 IST = timezone(timedelta(hours = 5, minutes=30))
 
