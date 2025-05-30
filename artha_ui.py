@@ -1,10 +1,10 @@
 import streamlit as st
 st.set_page_config(page_title="Personal Finance Chatbot", page_icon="💰")
 st.title("💬 Personal Finance Assistant - ARTHA")
-from agent import callArtha
+from ARTHA.agent import callArtha
 from datetime import datetime, timedelta, timezone
 from pymongo import MongoClient
-from chat_logger import log_chat
+from ARTHA.chat_logger import log_chat
 
 IST = timezone(timedelta(hours = 5, minutes=30))
 
