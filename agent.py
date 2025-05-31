@@ -10,7 +10,8 @@ from pymongo import MongoClient
 from datetime import datetime, timezone,timedelta
 
 # 🔮 LLM with tool support
-llm = ChatOllama(model="llama3.2:latest")
+ollama_url = "https://f475-2405-201-6811-88b0-81ff-bf54-386b-4bc8.ngrok-free.app"
+llm = ChatOllama(base_url=ollama_url,model="llama3.2:latest")
 uri = "mongodb+srv://sahil45:Sahil21145073@cluster0.yh0nggp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 client = MongoClient(uri)
