@@ -10,8 +10,7 @@ from pymongo import MongoClient
 from datetime import datetime, timezone,timedelta
 
 # 🔮 LLM with tool support
-ollama_url = "https://f475-2405-201-6811-88b0-81ff-bf54-386b-4bc8.ngrok-free.app"
-llm = ChatOllama(base_url=ollama_url,model="llama3.2:latest")
+llm = ChatOllama(model="llama3.2:latest")
 uri = "mongodb+srv://sahil45:Sahil21145073@cluster0.yh0nggp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 client = MongoClient(uri)
@@ -174,7 +173,13 @@ def get_total_investment(period: str = "month") -> str:
 @tool
 def who_am_I(query: str) -> str:
     """Who am I?"""
-    return "I am your personal finance assistant."
+    return """Hi! I'm ARTHA, your personal finance assistant 💰.
+
+I help you track your income, expenses, savings, and investments—all through simple conversations. Just tell me things like “Got ₹10,000 salary today” or “Paid rent ₹8,000” and I'll organize it for you.
+
+I'm still learning and evolving, but soon I'll also show you dashboards, summaries, and smart budget insights to help you manage your money better.
+
+Think of me as your friendly, AI-powered financial buddy 🤖—always ready to help you stay on top of your finances."""
 
 # 🛠️ Register tools
 tools = [
